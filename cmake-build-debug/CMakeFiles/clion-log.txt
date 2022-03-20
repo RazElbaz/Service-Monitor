@@ -1,0 +1,5 @@
+"C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2021.3/bin/ninja/win/ninja.exe" -G Ninja C:\Users\97252\CLionProjects\ServiceMonitor
+-- Configuring done
+CMake Error: CMake can not determine linker language for target: ServiceMonitor
+-- Generating done
+CMake Generate step failed.  Build files cannot be regenerated correctly.
