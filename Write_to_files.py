@@ -1,10 +1,31 @@
+import hashlib
 import os
 from os import path
-from ListEncryption import secure_file, get_hash_file
 
-serviceList = secure_file('TXT_files/serviceList.txt')
+"""""""""
+The purpose of the two next functions is to encrypt the list of processes in order to be protected
+"""""
+
+
+def secure_file(file):
+    #The MD5 is a hash algorithm to turn inputs into a fixed 128-bit (16 bytes) length of the hash value
+    hash=hashlib.md5()
+    #open the file as "rb" mode opens the file in binary format for reading
+    with open(file, "rb") as read:
+        read_file=read.read()
+        hash.update(read_file)
+    read.close()
+
+    return hash.hexdigest()
+
+
+def get_hash_file(file, hash_file):
+    return secure_file(file)==hash_file
+
+
+#create two global variables that will save the encrypted files
 statusLog = secure_file('TXT_files/statusLog.txt')
-
+serviceList = secure_file('TXT_files/serviceList.txt')
 
 
 def write_Status_Log(file, Add_to_file):
@@ -38,7 +59,6 @@ def write_serviceList(Add_to_file):
     try:
         get_hash_file(file_path,serviceList)
         write_Status_Log(file_path, Add_to_file)
-        update()
     except ValueError:
         print("EROR")
 
@@ -47,16 +67,8 @@ def write_statusLog(Add_to_file):
     try:
         get_hash_file(file_path, statusLog)
         write_Status_Log(file_path, Add_to_file)
-        update()
     except ValueError:
         print("EROR")
-
-def update():
-    global serviceList
-    global statusLog
-    serviceList = secure_file('TXT_files/serviceList.txt')
-    statusLog = secure_file('TXT_files/statusLog.txt')
-
 
 
 
