@@ -31,7 +31,6 @@ def Linux():
 
 
 
-
 def Windows():
     service_dict = [s for s in psutil.win_service_iter()]
     service_dict = {s.pid(): s.name() for s in service_dict}

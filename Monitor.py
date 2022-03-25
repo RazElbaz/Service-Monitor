@@ -5,7 +5,7 @@ import Process
 def Monitor():
     Time=time()
     thread = Process.ProcessThread(Time)
-    print("You can click 2 whenever you want to change the monitor mode to the Manual mode\n")
+    print("You can click 2 whenever you want to change the monitor mode to the Manual mode")
     while True:
         i = input('\n')
         #stop the moninotor mode and chande to manuel mode

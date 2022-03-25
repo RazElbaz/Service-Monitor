@@ -6,10 +6,9 @@ import Write_to_files
 from datetime import datetime
 
 class ProcessThread(object):
-    def __init__(self, time_for_update=3):
+    def __init__(self, time_for_update=0.1):
         #flag for priting
         self.print = True
-        self.i = 0
         #check is a variable that the user need to enter and this is the time for update the process list
         self.check=time_for_update
         self.process=Services.get_process()
@@ -29,14 +28,12 @@ class ProcessThread(object):
             service_list_log = json.dumps(service_list)
             Write_to_files.write_serviceList(service_list_log)
 
-            if self.i != 0:
+            if self.print:
                 self.update()
                 processes = self.current_process()
-                if self.print:
+                if processes!="":
                     print(processes)
-                Write_to_files.write_statusLog(processes)
-
-            self.i += 1
+                    Write_to_files.write_statusLog(processes)
             #i used a sleep function to slow down the print rate of the processes
             time.sleep(self.check)
 
@@ -54,23 +51,17 @@ class ProcessThread(object):
 
 
     def current_process(self):
-        print = "**********************************************************\n"
-        print+=datetime.now().strftime('%Y-%m-%d %H:%M:%S')+"\n"
-        print+="The new process is:  "
-        if len(self.new_process)!=0:
-            print+=str(self.new_process)
-            print+="\n"
-        else:
-            print+="---\n"
-        print+="The nonexistence process is:  "
+        str_print=""
+        if len(self.new_process) != 0:
+            str_print = datetime.now().strftime('%Y-%m-%d %H:%M:%S')+" "
+            str_print +=str(self.new_process)
+            str_print += " running"
         #there are new process:
-        if len(self.nonexistent)!=0:
-            print+=str(self.nonexistent)
-            print+="\n"
-        else:
-            print+="---\n"
-        print+="**********************************************************\n"
-        return print
+        if len(self.nonexistent) != 0:
+            str_print = datetime.now().strftime('%Y-%m-%d %H:%M:%S')+" "
+            str_print += str(self.nonexistent)
+            str_print += " stopped"
+        return str_print
 
     def set_process(self):
         self.process = Services.get_process()
