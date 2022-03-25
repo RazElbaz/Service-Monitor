@@ -1,31 +1,7 @@
-import subprocess
-from builtins import print
 import psutil
+import subprocess
 from platform import system
-
-def Linux():
-    output = subprocess.check_output(["service", "--status-all"])
-    service_list = list()
-    for line in output.split('\n'.encode(encoding='UTF-8')):
-        string = str(line)
-        service_name = string[10:- 1]
-        service_list.append(service_name)
-
-    service_dict = {p.pid: p.name() for p in psutil.process_iter(['name']) if p.info['name'] in service_list}
-    return service_dict
-
-
-def set_processes():
-    process_dict = {p.pid: p.info for p in psutil.process_iter(['name'])}
-    process_dict = {key: process_dict.get(key).get('name') for key in process_dict}
-    return process_dict
-
-
-def Windows():
-    service_dict = [s for s in psutil.win_service_iter()]
-    service_dict = {s.pid(): s.name() for s in service_dict}
-    return service_dict
-
+from builtins import print
 
 def get_process():
     Operating_System = system()
@@ -35,6 +11,34 @@ def get_process():
         return Linux()
     else:
         raise ValueError("This monitor is not supported in your system")
+
+def set_processes():
+    Processes = {p.pid: p.info for p in psutil.process_iter(['name'])}
+    Processes = {key: Processes.get(key).get('name') for key in Processes}
+    return Processes
+
+
+def Linux():
+    Processes = subprocess.check_output(["service", "--status-all"])
+    List = list()
+    for line in Processes.split('\n'.encode(encoding='UTF-8')):
+        string = str(line)
+        process = string[10:- 1]
+        List.append(process)
+
+    Processes_list = {p.pid: p.name() for p in psutil.process_iter(['name']) if p.info['name'] in List}
+    return Processes_list
+
+
+
+
+def Windows():
+    service_dict = [s for s in psutil.win_service_iter()]
+    service_dict = {s.pid(): s.name() for s in service_dict}
+    return service_dict
+
+
+
 
 
 

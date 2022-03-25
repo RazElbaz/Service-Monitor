@@ -1,6 +1,6 @@
 import json
 from datetime import datetime, timedelta
-from Security import secure_file, get_hash_file
+from ListEncryption import secure_file, get_hash_file
 import Write_to_files
 
 """" ***** Manual mode *****"""
@@ -8,7 +8,7 @@ def Manual():
     #ask the user for the time he want to check the processes
     start_check = input("Type the time when you want to start checking the processes in this way: year-month-day hour:minutes:seconds\n")
     end_check = input("Type the time when you want to finish reviewing the processes in this way: year-month-day hour:minutes:seconds\n")
-    new_process, nonexisten_process = load(start_check, end_check)
+    new_process, nonexisten_process = Transfer_to_Jason(start_check, end_check)
     new_process, nonexisten_process = update(new_process, nonexisten_process)
 
     p= "The new process:  "
@@ -30,14 +30,16 @@ def Manual():
     print(p)
 
 def update(new_process,nonexisten):
-    current_new = new_process
-    current_nonexisten = nonexisten
-    update_nonexisten_process = {j: nonexisten[j] for j in set(current_nonexisten)-set(current_new)}
-    update_new_process_dict = {j: new_process[j] for j in set(current_new)-set(current_nonexisten)}
-    return update_new_process_dict, update_nonexisten_process
+    update_new={}
+    update_nonexisten={}
+    try:
+        update_new = {k: nonexisten[k] for k in set(nonexisten) - set(new_process)}
+        update_nonexisten = {k: new_process[k] for k in set(new_process) - set(nonexisten)}
+    except:
+        pass
+    return update_nonexisten, update_new
 
-
-def load(start_check, end_check):
+def Transfer_to_Jason(start_check, end_check):
     #dict() -> new empty dictionary
     new_process = dict()
     nonexisten_process = dict()
@@ -48,12 +50,10 @@ def load(start_check, end_check):
     #syntax is:time.strptime(time_string[, format])
     start_time = datetime.strptime(start_check, '%Y-%m-%d %H:%M:%S')
     end_time = datetime.strptime(end_check, '%Y-%m-%d %H:%M:%S')
-
     try:
         get_hash_file('TXT_files/serviceList.txt', Write_to_files.serviceList)
     except ValueError:
         print("EROR")
-
     with open('TXT_files/serviceList.txt', 'r') as file:
         for str in file:
             #str[2:21]-> This position in the string has the date and time
@@ -65,9 +65,7 @@ def load(start_check, end_check):
                 #check the absolute value of the  end time
             if abs(end_time - current) < time_delta:
                 nonexisten_process = json.loads(str)
-                nonexisten_process = nonexisten_process.get( str(current) )
+                nonexisten_process = nonexisten_process.get(current)
         #close the file
         file.close()
     return new_process, nonexisten_process
-if __name__ == "__main__":
-    Manual()

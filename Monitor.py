@@ -1,13 +1,10 @@
 import Manual
-import ProcessS
-
-def timee():
-    return int(input("Please insert the interval that we will update you in a new process\n"))
+import Process
 
 """" ***** Monitor mode *****"""
 def Monitor():
-    Time=timee()
-    thread = ProcessS.ThreadingLog(Time)
+    Time=time()
+    thread = Process.ProcessThread(Time)
     print("You can click 2 whenever you want to change the monitor mode to the Manual mode\n")
     while True:
         i = input('\n')
@@ -22,7 +19,9 @@ def Monitor():
 
         #if the user want to get out of the program
         elif i == '0':
+            print("********* Shutdown of monitor ************")
             exit(0)
 
-if __name__ == "__main__":
-    Monitor()
+def time():
+    return int(input("Please insert the interval that we will update you in a new process\n"))
+

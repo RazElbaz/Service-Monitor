@@ -14,3 +14,6 @@ if __name__ == "__main__":
         Monitor.Monitor()
     elif monitor_mode=='2':
         Manual.Manual()
+    elif monitor_mode=='0':
+        print("********* Shutdown of monitor ************")
+        exit(0)
