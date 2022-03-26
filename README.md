@@ -1,8 +1,9 @@
 # Monitor
+Service Monitor programming task
 
-Our goal is to maximize the total amount of weights of the captured Pokemon.
-# Witing language:
+# Writing language:
 Python 3.8/3.9
+
 # Introduction:
 This task opens up a tool that monitors the services(services) that run the system, and reports on changes that can be critical as SOC people.
 Similar to the Zenos tool we knew - which monitors our services.
