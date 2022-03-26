@@ -15,7 +15,7 @@ Similar to the Zenos tool we knew - which monitors our services.
 **Manual**In this class the mode is implemented manually - in this mode we would like to use the serviceList file in order to load 2 samples from different time frames and make a comparison.
 The program will get a date and time for 2 events, load the 2 samples from the file and display changes similar to the monitor mode.
 
-**Mointor** In this class a monitor mode is implemented - for X time that the user sets, the program samples every X time all the services running on the computer, and shows whether a change is observed from the previous sample. That is, is there a service that is no longer running, or is there a service
+**Monitor** In this class a monitor mode is implemented - for X time that the user sets, the program samples every X time all the services running on the computer, and shows whether a change is observed from the previous sample. That is, is there a service that is no longer running, or is there a service
 A new one is running in the system. Any change that has taken place should alert the user to the interface.
 
 **Services** In this class, prints were made to the menu screen in the terminal, the functions for writing files were called and the list of running and non processes was updated.
