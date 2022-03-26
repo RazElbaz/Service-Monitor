@@ -9,8 +9,7 @@ The purpose of the two next functions is to encrypt the list of processes in ord
 
 def secure_file(file):
     #The MD5 is a hash algorithm to turn inputs into a fixed 128-bit (16 bytes) length of the hash value
-    hash=hashlib.md5()
-    #open the file as "rb" mode opens the file in binary format for reading
+    hash = hashlib.md5()
     with open(file, "rb") as read:
         read_file=read.read()
         hash.update(read_file)
@@ -23,7 +22,7 @@ def get_hash_file(file, hash_file):
     return secure_file(file)==hash_file
 
 
-#create two global variables that will save the encrypted files
+# create two global variables that will save the encrypted files
 statusLog = secure_file('TXT_files/statusLog.txt')
 serviceList = secure_file('TXT_files/serviceList.txt')
 
@@ -35,9 +34,9 @@ def write_Status_Log(file, Add_to_file):
             write.write(Add_to_file + "\n")
         write.close()
 
-    #bak" is a filename extension commonly used to signify a backup copy of a file
+    # "bak" is a filename extension commonly used to signify a backup copy of a file
     current = file + '.bak'
-    #open the file we received in read mode and the temporary file in write mode
+    # open the file we received in read mode and the temporary file in write mode
     with open(file, 'r') as read, open(current,"w") as write:
         write.write(Add_to_file+"\n")
         #reading from the file and writing what we read to the current file
@@ -48,9 +47,8 @@ def write_Status_Log(file, Add_to_file):
     # fetching its contents, changing and identifying the current directory
     os.remove(file)
 
-    #i changed the name of the temporary file to the name of the current file
+    # change the name of the temporary file to the name of the current file
     os.rename(current, file)
-    #close the files
     read.close(),  write.close()
 
 

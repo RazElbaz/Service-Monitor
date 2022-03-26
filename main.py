@@ -10,6 +10,7 @@ if __name__ == "__main__":
                        "**************************************\n"
                        "**************************************\n"
                        "You can click 0 whenever you want to finish the program \n")
+
     if monitor_mode=='1':
         Monitor.Monitor()
     elif monitor_mode=='2':
@@ -17,3 +18,5 @@ if __name__ == "__main__":
     elif monitor_mode=='0':
         print("********* Shutdown of monitor ************")
         exit(0)
+    else:
+        print("Bad input! Restart the monitor and follow the instructions")

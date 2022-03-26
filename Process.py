@@ -5,20 +5,22 @@ import threading
 import Write_to_files
 from datetime import datetime
 
+
 class ProcessThread(object):
     def __init__(self, time_for_update=0.1):
-        #flag for priting
+        # flag for printing
         self.print = True
-        #check is a variable that the user need to enter and this is the time for update the process list
-        self.check=time_for_update
-        self.process=Services.get_process()
-        #dictionarys for the process
-        self.new_process={}
-        self.nonexistent={}
-        #starting the thread
-        thread=threading.Thread(target=self.run,args=())
-        # i used the deanmon thread because the daemon thread does not block the main thread port and continues to run in the background as we need for the task
-        thread.daemon=True
+        # check is a variable that the user need to enter and this is the time for update the process list
+        self.check = time_for_update
+        self.process = Services.get_process()
+        # dictionary's for the process
+        self.new_process = {}
+        self.nonexistent = {}
+        # starting the thread
+        thread = threading.Thread(target=self.run, args=())
+        # i used the deanmon thread because the daemon thread does not block the main thread port and continues to
+        # run in the background as we need for the task
+        thread.daemon = True
         thread.start()
 
     def run(self):
@@ -31,34 +33,40 @@ class ProcessThread(object):
             if self.print:
                 self.update()
                 processes = self.current_process()
-                if processes!="":
+                if processes != "":
                     print(processes)
                     Write_to_files.write_statusLog(processes)
-            #i used a sleep function to slow down the print rate of the processes
+            # i used a sleep function to slow down the print rate of the processes
             time.sleep(self.check)
 
+    """""""""
+    By using subtraction between lists the function checks the latest processors and updates the dictionaries of the department
+    """
     def update(self):
         current_nonexistent = self.process
         current_new_process = self.set_process()
-        #The set() function creates a set in Python.
-        #in order to update the new and old processes, I made a subtraction between the two lists
+        # The set() function creates a set in Python.
+        # in order to update the new and old processes, I made a subtraction between the two lists
         self.nonexistent = {
             j: current_nonexistent[j]
-            for j in set(current_nonexistent)-set(current_new_process)}
+            for j in set(current_nonexistent) - set(current_new_process)}
         self.new_process = {
             j: current_new_process[j]
-            for j in set(current_new_process)-set(current_nonexistent)}
+            for j in set(current_new_process) - set(current_nonexistent)}
 
-
+    """""""""
+    This function prints to the screen the processors that are running and the processors that have stopped running,
+    and updates the list of processors
+    """
     def current_process(self):
-        str_print=""
+        str_print = ""
         if len(self.new_process) != 0:
-            str_print = datetime.now().strftime('%Y-%m-%d %H:%M:%S')+" "
-            str_print +=str(self.new_process)
+            str_print = datetime.now().strftime('%Y-%m-%d %H:%M:%S') + " "
+            str_print += str(self.new_process)
             str_print += " running"
-        #there are new process:
+        # there are new process:
         if len(self.nonexistent) != 0:
-            str_print = datetime.now().strftime('%Y-%m-%d %H:%M:%S')+" "
+            str_print = datetime.now().strftime('%Y-%m-%d %H:%M:%S') + " "
             str_print += str(self.nonexistent)
             str_print += " stopped"
         return str_print
@@ -72,7 +80,3 @@ class ProcessThread(object):
 
     def _continue(self):
         self.print = True
-
-
-
-
