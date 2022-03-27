@@ -3,6 +3,7 @@ import subprocess
 from platform import system
 
 
+
 def get_process():
     Operating_System = system()
     if Operating_System == 'Windows':
@@ -14,7 +15,7 @@ def get_process():
 
 
 def set_processes():
-    Processes = {p.name(): p.info for p in psutil.process_iter(['name'])}
+    Processes = {pid.name(): pid.info for pid in psutil.process_iter(['name'])}
     Processes = {key: psutil.win_service_get(Processes.get(key)).status() for key in Processes}
     return Processes
 
@@ -41,3 +42,4 @@ def Windows():
     service_dict = {s.pid(): s.name() for s in service_dict}
     return service_dict
 
+get_process()

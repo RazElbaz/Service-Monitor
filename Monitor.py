@@ -2,8 +2,6 @@ import Manual
 import Process
 import Services
 
-"""" ***** Monitor mode *****"""
-
 
 def Monitor():
     Time = time()
