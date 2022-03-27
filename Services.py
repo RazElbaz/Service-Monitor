@@ -4,6 +4,10 @@ from platform import system
 
 def get_pid(name):
     return subprocess.check_output(["pidof" , "-s", name]).decode()[:-1]
+# def get_pid(name):
+#     return [subprocess.check_output(["pidof",name]).decode().split()]
+
+
 
 def get_process():
     Operating_System = system()
@@ -30,6 +34,7 @@ def set_processes():
 
 def Linux():
     Process = {}
+    cnt=0
     process = subprocess.check_output("service --status-all", shell=True).decode("UTF-8")
     for service in process.split('\n')[:-1]:
         curr_name = service[8:]
@@ -40,7 +45,8 @@ def Linux():
             try:
                 pid = int(get_pid(curr_name))
             except:
-                pid=None
+                pid = cnt
+                cnt -= 1
 
         Process[pid] = curr_name
     return Process
