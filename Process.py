@@ -13,6 +13,7 @@ class ProcessThread(object):
         # check is a variable that the user need to enter and this is the time for update the process list
         self.check = time_for_update
         self.process = Services.get_process()
+        print(self.process)
         # dictionary's for the process
         self.new_process = {}
         self.nonexistent = {}
