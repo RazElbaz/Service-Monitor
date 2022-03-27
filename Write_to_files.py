@@ -2,16 +2,15 @@ import hashlib
 import os
 from os import path
 
-"""""""""
-The purpose of the two next functions is to encrypt the list of processes in order to be protected
-"""""
-
 
 def secure_file(file):
-    #The MD5 is a hash algorithm to turn inputs into a fixed 128-bit (16 bytes) length of the hash value
+    """
+    The purpose of the two next functions is to encrypt the list of processes in order to be protected
+    """
+    # The MD5 is a hash algorithm to turn inputs into a fixed 128-bit (16 bytes) length of the hash value
     hash = hashlib.md5()
     with open(file, "rb") as read:
-        read_file=read.read()
+        read_file = read.read()
         hash.update(read_file)
     read.close()
 
@@ -19,7 +18,7 @@ def secure_file(file):
 
 
 def get_hash_file(file, hash_file):
-    return secure_file(file)==hash_file
+    return secure_file(file) == hash_file
 
 
 # create two global variables that will save the encrypted files
@@ -37,9 +36,9 @@ def write_Status_Log(file, Add_to_file):
     # "bak" is a filename extension commonly used to signify a backup copy of a file
     current = file + '.bak'
     # open the file we received in read mode and the temporary file in write mode
-    with open(file, 'r') as read, open(current,"w") as write:
-        write.write(Add_to_file+"\n")
-        #reading from the file and writing what we read to the current file
+    with open(file, 'r') as read, open(current, "w") as write:
+        write.write(Add_to_file + "\n")
+        # reading from the file and writing what we read to the current file
         for s in read:
             write.write(s)
 
@@ -49,16 +48,17 @@ def write_Status_Log(file, Add_to_file):
 
     # change the name of the temporary file to the name of the current file
     os.rename(current, file)
-    read.close(),  write.close()
+    read.close(), write.close()
 
 
 def write_serviceList(Add_to_file):
     file_path = 'TXT_files/serviceList.txt'
     try:
-        get_hash_file(file_path,serviceList)
+        get_hash_file(file_path, serviceList)
         write_Status_Log(file_path, Add_to_file)
     except ValueError:
         print("EROR")
+
 
 def write_statusLog(Add_to_file):
     file_path = 'TXT_files/statusLog.txt'
@@ -67,8 +67,3 @@ def write_statusLog(Add_to_file):
         write_Status_Log(file_path, Add_to_file)
     except ValueError:
         print("EROR")
-
-
-
-
-

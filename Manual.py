@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from Write_to_files import secure_file, get_hash_file
 import Write_to_files
 
+
 def Manual():
     # ask the user for the time he want to check the processes
     start_check = input(
@@ -11,29 +12,15 @@ def Manual():
         "Type the time when you want to finish reviewing the processes in this way: year-month-day "
         "hour:minutes:seconds\n")
 
-    new_process, nonexistent_process = Transfer_to_Jason(start_check, end_check)
-    update(new_process, nonexistent_process)
-
-
-def update(new_process, nonexistent):
-    update_new = {}
-    update_nonexistent = {}
-    try:
-        update_new = {j: nonexistent[j] for j in set(nonexistent) - set(new_process)}
-        update_nonexistent = {j: new_process[j] for j in set(new_process) - set(nonexistent)}
-    except:
-        pass
-    return update_nonexistent, update_new
-
-
-"""""""""
-In this function we would like to use the serviceList file in order to load 2 samples from different time 
-frames and make a comparison. The program will get a date and time for 2 events, load the 2 samples from the file, 
-and display changes similar to the monitor mode 
-"""
+    Transfer_to_Jason(start_check, end_check)
 
 
 def Transfer_to_Jason(start_check, end_check):
+    """
+    In this function we would like to use the serviceList file in order to load 2 samples from different time
+    frames and make a comparison. The program will get a date and time for 2 events, load the 2 samples from the file,
+    and display changes similar to the monitor mode
+    """
     # dict() -> new empty dictionary
     new_process = dict()
     nonexistent_process = dict()

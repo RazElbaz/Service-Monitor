@@ -1,41 +1,18 @@
-2022-03-27 16:10:34 {18728: 'NetSetupSvc'} stopped
-2022-03-27 16:10:10 {13408: 'BcastDVRUserService_2c5af3a', 20520: 'ClipSVC', 6312: 'XblAuthManager', 14548: 'wlidsvc', 18072: 'AppXSvc'} running
-2022-03-27 16:09:32 {18728: 'NetSetupSvc'} running
-2022-03-27 15:50:04 {15912: 'wlidsvc'} running
-2022-03-27 15:49:01 {16416: 'ClipSVC'} stopped
-2022-03-27 15:47:54 {4936: 'AppXSvc'} stopped
-2022-03-27 15:42:56 {17692: 'WdiSystemHost'} running
-2022-03-27 15:42:50 {16416: 'ClipSVC'} running
-2022-03-27 15:42:49 {4936: 'AppXSvc'} running
-2022-03-27 15:42:10 {16536: 'wlidsvc'} stopped
-2022-03-27 15:39:55 {6072: 'AppXSvc'} stopped
-2022-03-27 15:39:44 {13412: 'LxssManager'} stopped
-2022-03-27 15:39:41 {6744: 'sppsvc'} stopped
-2022-03-27 15:39:10 {16536: 'wlidsvc'} running
-2022-03-27 15:39:09 {6744: 'sppsvc'} running
-2022-03-27 15:34:56 {6072: 'AppXSvc'} running
-2022-03-27 15:34:54 {2236: 'P9RdrService_2c5af3a'} stopped
-2022-03-27 15:34:43 {2236: 'P9RdrService_2c5af3a'} running
-2022-03-27 15:32:50 {16272: 'AppXSvc'} stopped
-2022-03-27 15:31:06 {13412: 'LxssManager'} running
-2022-03-27 15:27:49 {16272: 'AppXSvc'} running
-2022-03-27 15:24:02 {21496: 'wlidsvc'} stopped
-2022-03-26 14:19:33 {2368: 'XblAuthManager'} running
-2022-03-26 14:19:32 {19676: 'BcastDVRUserService_79e9e'} running
-2022-03-26 14:19:13 {19640: 'NetSetupSvc'} running
-2022-03-25 18:47:55 {17860: 'NetSetupSvc', 10620: 'VBoxSDS'} running
-2022-03-25 18:45:20 {15256: 'NetSetupSvc'} stopped
-2022-03-25 18:45:19 {10856: 'VBoxSDS'} stopped
-2022-03-25 18:45:07 {6940: 'VBoxSDS'} stopped
-2022-03-25 18:44:03 {15256: 'NetSetupSvc', 6940: 'VBoxSDS', 14372: 'AppXSvc'} running
-2022-03-25 18:10:28 {14272: 'BcastDVRUserService_86cd7', 19876: 'ClipSVC', 13620: 'XblAuthManager'} running
-2022-03-25 18:10:22 {3372: 'NetSetupSvc'} stopped
-2022-03-25 18:10:21 {2928: 'VBoxSDS'} stopped
-2022-03-25 18:10:11 {2928: 'VBoxSDS', 3372: 'NetSetupSvc'} running
-2022-03-25 17:04:13 {5892: 'NetSetupSvc'} stopped
-2022-03-25 17:04:12 {3264: 'VBoxSDS'} stopped
-2022-03-25 17:04:05 {3264: 'VBoxSDS', 8068: 'ClipSVC', 5892: 'NetSetupSvc'} running
-2022-03-25 17:03:52 {8024: 'ClipSVC', 3780: 'XblAuthManager'} stopped
-2022-03-25 17:03:37 {4152: 'NetSetupSvc'} stopped
-2022-03-25 17:03:36 {6320: 'VBoxSDS'} stopped
-2022-03-25 17:03:25 {4152: 'NetSetupSvc', 6320: 'VBoxSDS'} running
+2022-03-27 19:59:30 {'XblAuthManager': 'running'} has stopped
+2022-03-27 19:58:03 {'wlidsvc': 'running'} running
+2022-03-27 19:56:00 {'wlidsvc': 'running'} has stopped
+2022-03-27 19:55:06 {'NetSetupSvc': 'running'} has stopped
+2022-03-27 19:55:04 {'CaptureService_2c5af3a': 'running'} running
+2022-03-27 19:54:28 {'XblAuthManager': 'running'} running
+2022-03-27 19:54:26 {'BcastDVRUserService_2c5af3a': 'start_pending', 'ClipSVC': 'running'} running
+2022-03-27 19:54:05 {'NetSetupSvc': 'running'} running
+2022-03-27 19:36:14 {'wlidsvc': 'running'} has stopped
+2022-03-27 19:35:11 {'WerSvc': 'running'} has stopped
+2022-03-27 19:35:10 {'NetSetupSvc': 'running'} has stopped
+2022-03-27 19:33:48 {'NetSetupSvc': 'running'} running
+2022-03-27 19:33:11 {'wlidsvc': 'running'} running
+2022-03-27 19:33:10 {'WerSvc': 'running', 'WdiSystemHost': 'running'} running
+2022-03-27 19:32:58 {'AppXSvc': 'running', 'XblAuthManager': 'running'} running
+2022-03-27 19:32:56 {'ClipSVC': 'running', 'BcastDVRUserService_2c5af3a': 'start_pending'} running
+2022-03-27 19:32:50 {'AppXSvc': 'running'} has stopped
+2022-03-27 19:32:27 {'NetSetupSvc': 'running'} running

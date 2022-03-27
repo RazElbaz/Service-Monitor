@@ -13,7 +13,6 @@ class ProcessThread(object):
         # check is a variable that the user need to enter and this is the time for update the process list
         self.check = time_for_update
         self.process = Services.get_process()
-        print(self.process)
         # dictionary's for the process
         self.new_process = {}
         self.nonexistent = {}
@@ -40,10 +39,10 @@ class ProcessThread(object):
             # i used a sleep function to slow down the print rate of the processes
             time.sleep(self.check)
 
-    """""""""
-    By using subtraction between lists the function checks the latest processors and updates the dictionaries of the department
-    """
     def update(self):
+        """
+        By using subtraction between lists the function checks the latest processors and updates the dictionaries of the department
+        """
         current_nonexistent = self.process
         current_new_process = self.set_process()
         # The set() function creates a set in Python.
@@ -55,11 +54,11 @@ class ProcessThread(object):
             j: current_new_process[j]
             for j in set(current_new_process) - set(current_nonexistent)}
 
-    """""""""
-    This function prints to the screen the processors that are running and the processors that have stopped running,
-    and updates the list of processors
-    """
     def current_process(self):
+        """
+        This function prints to the screen the processors that are running and the processors that have stopped running,
+        and updates the list of processors
+        """
         str_print = ""
         if len(self.new_process) != 0:
             str_print = datetime.now().strftime('%Y-%m-%d %H:%M:%S') + " "
@@ -69,7 +68,7 @@ class ProcessThread(object):
         if len(self.nonexistent) != 0:
             str_print = datetime.now().strftime('%Y-%m-%d %H:%M:%S') + " "
             str_print += str(self.nonexistent)
-            str_print += " stopped"
+            str_print += " has stopped"
         return str_print
 
     def set_process(self):
