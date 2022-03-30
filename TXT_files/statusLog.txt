@@ -1,3 +1,5 @@
+2022-03-30 11:18:15 {'WdiSystemHost': 'running'} has stopped
+2022-03-30 11:17:47 {'NetSetupSvc': 'running'} running
 2022-03-30 11:08:32 {'LxpSvc': 'running'} has stopped
 2022-03-30 11:08:01 {'LxpSvc': 'running', 'TrustedInstaller': 'start_pending'} running
 2022-03-30 10:56:05 {'NetSetupSvc': 'running'} has stopped
