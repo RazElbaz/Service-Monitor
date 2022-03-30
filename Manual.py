@@ -25,7 +25,7 @@ def Transfer_to_Jason(start_check, end_check):
     new_process = dict()
     nonexistent_process = dict()
     # timedelta represent the difference between two datetime objects.
-    time_delta = timedelta(seconds=0.5)
+    time_delta = timedelta(seconds=5)
 
     # The strptime() function converts the character string pointed to by buf to values which are stored in the tm
     # structure pointed to by tm, using the format specified by format syntax is:time.strptime(time_string[, format])

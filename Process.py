@@ -7,7 +7,7 @@ from datetime import datetime
 
 
 class ProcessThread(object):
-    def __init__(self, time_for_update=0.1):
+    def __init__(self, time_for_update=1):
         # flag for printing
         self.print = True
         # check is a variable that the user need to enter and this is the time for update the process list

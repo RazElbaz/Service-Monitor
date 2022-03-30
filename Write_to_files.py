@@ -18,6 +18,9 @@ def secure_file(file):
 
 
 def get_hash_file(file, hash_file):
+    """
+    This function is designed to check that no change has been made
+    """
     return secure_file(file) == hash_file
 
 
@@ -52,18 +55,30 @@ def write_Status_Log(file, Add_to_file):
 
 
 def write_serviceList(Add_to_file):
+    """
+    This function is designed to check that no change has been made by a stranger, in case the user receives an error message and the program ends.
+    If everything is correct, we will write the changes to the file
+    ***The way to protect against hackers***
+    """
     file_path = 'TXT_files/serviceList.txt'
     try:
         get_hash_file(file_path, serviceList)
         write_Status_Log(file_path, Add_to_file)
     except ValueError:
-        print("EROR")
+        print("A hacker tried to sabotage this file and modify it")
+        exit(0)
 
 
 def write_statusLog(Add_to_file):
+    """
+    This function is designed to check that no change has been made by a stranger, in case the user receives an error message and the program ends.
+    If everything is correct, we will write the changes to the file
+    ***The way to protect against hackers***
+    """
     file_path = 'TXT_files/statusLog.txt'
     try:
         get_hash_file(file_path, statusLog)
         write_Status_Log(file_path, Add_to_file)
     except ValueError:
-        print("EROR")
+        print("A hacker tried to sabotage this file and modify it")
+        exit(0)

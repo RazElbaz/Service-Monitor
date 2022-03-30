@@ -1,3 +1,26 @@
+2022-03-30 09:16:23 {'NetSetupSvc': 'running'} has stopped
+2022-03-30 09:16:22 {'VBoxSDS': 'running'} has stopped
+2022-03-30 09:16:11 {'VBoxSDS': 'running', 'NetSetupSvc': 'running'} running
+2022-03-30 09:15:49 {'XblAuthManager': 'running'} running
+2022-03-30 09:10:55 {'NetSetupSvc': 'running'} has stopped
+2022-03-30 09:10:54 {'VBoxSDS': 'running'} has stopped
+2022-03-30 09:10:43 {'VBoxSDS': 'running', 'NetSetupSvc': 'running'} running
+2022-03-30 09:10:34 {'NetSetupSvc': 'running'} has stopped
+2022-03-30 09:10:33 {'VBoxSDS': 'running'} has stopped
+2022-03-30 09:10:20 {'VBoxSDS': 'running'} running
+2022-03-30 09:10:13 {'MapsBroker': 'running'} has stopped
+2022-03-30 09:10:04 {'wscsvc': 'running', 'UsoSvc': 'running'} running
+2022-03-30 09:10:03 {'gupdate': 'start_pending'} has stopped
+2022-03-30 09:10:01 {'edgeupdate': 'start_pending', 'WPDBusEnum': 'running'} has stopped
+2022-03-30 09:10:00 {'StorSvc': 'running', 'edgeupdate': 'start_pending', 'DoSvc': 'running', 'WaaSMedicSvc': 'running'} running
+2022-03-30 09:09:56 {'NetSetupSvc': 'start_pending'} running
+2022-03-30 09:09:23 {'FrameServer': 'running'} has stopped
+2022-03-30 09:09:17 {'XblAuthManager': 'running', 'BcastDVRUserService_5d81b': 'running'} running
+2022-03-30 09:00:15 {'XblAuthManager': 'running'} running
+2022-03-30 08:58:15 {'wlidsvc': 'running'} has stopped
+2022-03-30 08:56:44 {'NetSetupSvc': 'running'} has stopped
+2022-03-30 08:55:41 {'NetSetupSvc': 'running'} running
+2022-03-30 08:54:13 {'BcastDVRUserService_660e1ba': 'running', 'ClipSVC': 'running', 'XblAuthManager': 'running'} running
 2022-03-27 19:59:30 {'XblAuthManager': 'running'} has stopped
 2022-03-27 19:58:03 {'wlidsvc': 'running'} running
 2022-03-27 19:56:00 {'wlidsvc': 'running'} has stopped

@@ -22,7 +22,7 @@ def set_processes():
     if system() == 'Windows':
         Processes = Windows()
     elif system() == 'Linux':
-        Process = Linux()
+        Processes = Linux()
     return Processes
 
 
