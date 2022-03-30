@@ -1,3 +1,17 @@
+2022-03-30 11:08:32 {'LxpSvc': 'running'} has stopped
+2022-03-30 11:08:01 {'LxpSvc': 'running', 'TrustedInstaller': 'start_pending'} running
+2022-03-30 10:56:05 {'NetSetupSvc': 'running'} has stopped
+2022-03-30 10:54:39 {'XblAuthManager': 'running', 'BcastDVRUserService_5d81b': 'running'} running
+2022-03-30 10:54:25 {'NetSetupSvc': 'running'} running
+2022-03-30 10:33:36 {'NetSetupSvc': 'running'} has stopped
+2022-03-30 10:32:59 {'WdiSystemHost': 'running'} has stopped
+2022-03-30 10:32:34 {'NetSetupSvc': 'running'} running
+2022-03-30 10:32:03 {'BcastDVRUserService_5d81b': 'running', 'XblAuthManager': 'running'} running
+2022-03-30 09:51:07 {'wlidsvc': 'running'} has stopped
+2022-03-30 09:49:26 {'NetSetupSvc': 'running'} has stopped
+2022-03-30 09:49:25 {'VBoxSDS': 'running'} has stopped
+2022-03-30 09:49:07 {'VBoxSDS': 'running', 'NetSetupSvc': 'running'} running
+2022-03-30 09:48:53 {'ClipSVC': 'running', 'BcastDVRUserService_5d81b': 'running', 'XblAuthManager': 'running'} running
 2022-03-30 09:16:23 {'NetSetupSvc': 'running'} has stopped
 2022-03-30 09:16:22 {'VBoxSDS': 'running'} has stopped
 2022-03-30 09:16:11 {'VBoxSDS': 'running', 'NetSetupSvc': 'running'} running
